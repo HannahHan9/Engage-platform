@@ -1,12 +1,10 @@
-import UserList from "./components/UserList";
 import "./App.css";
-
-
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
     <>
-      <UserList />
+      <Dashboard />
     </>
   );
 }
