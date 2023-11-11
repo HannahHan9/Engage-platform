@@ -5,14 +5,24 @@ import Grid from "@mui/material/Unstable_Grid2";
 
 const UserList = ({ users, selected, setSelected }) => {
   return (
-    <Grid xs={12} sm={4} md={3}>
+    <Grid
+      xs={12}
+      sm={4}
+      md={3}
+      container
+      sx={{ backgroundColor: "#143556", padding: 2 }}
+    >
       <Typography
         variant="h6"
         component="h2"
         gutterBottom
-        color="textSecondary"
-        align="left"
+        align="center"
+        color="#fff"
       >
+        <img
+          src="https://www.engagesolutionsgroup.com/employee/wp-content/uploads/sites/2/2023/10/engage-footer.svg"
+          alt="Engage Colleague"
+        />
         All Users
       </Typography>
       <List align="left">
@@ -24,7 +34,9 @@ const UserList = ({ users, selected, setSelected }) => {
               setSelected(user.id);
             }}
           >
-            {user.last_name.toUpperCase()}, {user.first_name}
+            <Typography color="#fff">
+              {user.last_name.toUpperCase()}, {user.first_name}
+            </Typography>
           </ListItemButton>
         ))}
       </List>

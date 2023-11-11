@@ -60,7 +60,7 @@ const Dashboard = () => {
     return <p>Error code: {error} Oops, something went wrong..</p>;
   }
   return (
-    <Grid container spacing={0.5}>
+    <Grid container spacing={1}>
       {!mobile ? (
         <>
           <UserList
