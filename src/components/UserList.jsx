@@ -1,12 +1,21 @@
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
-
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Unstable_Grid2";
 
 const UserList = ({ users, selected, setSelected }) => {
   return (
-    <>
-      <h2>All Users</h2>
-      <List>
+    <Grid xs={12} sm={4} md={3}>
+      <Typography
+        variant="h6"
+        component="h2"
+        gutterBottom
+        color="textSecondary"
+        align="left"
+      >
+        All Users
+      </Typography>
+      <List align="left">
         {users.map((user) => (
           <ListItemButton
             key={user.id}
@@ -19,7 +28,7 @@ const UserList = ({ users, selected, setSelected }) => {
           </ListItemButton>
         ))}
       </List>
-    </>
+    </Grid>
   );
 };
 

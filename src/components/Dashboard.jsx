@@ -1,12 +1,18 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import UserList from "./UserList";
+import UserDetails from "./UserDetails";
+import Grid from "@mui/material/Unstable_Grid2";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const Dashboard = () => {
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState();
   const [selected, setSelected] = useState();
+  const [user, setUser] = useState();
+
+  const mobile = useMediaQuery("(max-width:600px)");
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -38,7 +44,13 @@ const Dashboard = () => {
       setIsLoading(false);
     };
     fetchUsers();
-  }, [setUsers, setIsLoading, setError]);
+  }, []);
+
+  useEffect(() => {
+    if (selected) {
+      setUser(users.find((user) => user.id === selected));
+    }
+  }, [selected, users]);
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -48,9 +60,22 @@ const Dashboard = () => {
     return <p>Error code: {error} Oops, something went wrong..</p>;
   }
   return (
-    <>
-      <UserList users={users} selected={selected} setSelected={setSelected} />
-    </>
+    <Grid container spacing={0.5}>
+      {!mobile ? (
+        <>
+          <UserList
+            users={users}
+            selected={selected}
+            setSelected={setSelected}
+          />{" "}
+          <UserDetails user={user} setUser={setUser} />
+        </>
+      ) : !user ? (
+        <UserList users={users} selected={selected} setSelected={setSelected} />
+      ) : (
+        <UserDetails user={user} setUser={setUser} />
+      )}
+    </Grid>
   );
 };
 
