@@ -1,7 +1,13 @@
 # Engage platform App
 
 A Single page application that fetches and displays the users details.\
-The site makes use of Engage Integration API to display the user data.\
+The site is responsive and makes use of Engage Integration API to display the user data.\
+It also makes use of a back end proxy server to ensure the security of the api keys.\
+
+Things I would like to improve:
+- implement Routes
+- implement tests (I only have experience writing back end tests)
+- use TanStack / React Query
 
 ## Built using:
 
@@ -11,6 +17,13 @@ The site makes use of Engage Integration API to display the user data.\
 - Engage Integration API
 
 ## Running this project locally
+
+Please create a file named '.env' and replace Value of tenantId and Value of Authorization below with the API keys:
+
+```
+VITE_TENANTID=Value of tenantId
+VITE_AUTHORIZATION=Bearer Value of Authorization
+```
 
 After forking and cloning this repo, navigate to the project directory. Install the required dependencies and start the development server with the following commands:
 
