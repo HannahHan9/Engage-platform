@@ -3,8 +3,11 @@
 A Single page application that fetches and displays the users details.\
 The site is responsive and makes use of Engage Integration API to display the user data.\
 It also makes use of a back end proxy server to ensure the security of the api keys.\
+A hosted version can be found [here](https://engage-platform.onrender.com/).  
+(Please allow 30 seconds for it to spin up before viewing)
 
 Things I would like to improve:
+
 - implement Routes to update the url appropriately when selecting users
 - implement tests (I only have experience writing back end tests)
 - use TanStack / React Query
@@ -25,10 +28,15 @@ VITE_TENANTID=Value of tenantId
 VITE_AUTHORIZATION=Bearer Value of Authorization
 ```
 
-After forking and cloning this repo, navigate to the project directory. Install the required dependencies and start the development server with the following commands:
+After forking and cloning this repo, navigate to the project directory. Install the required dependencies with the following command:
 
 ```
 npm install
+```
+
+On line 23, in Dashboard.jsx file, replace the url value with "https://localhost:5000/users" and start the development server with the following commands:
+
+```
 npm start
 npm run dev
 ```
