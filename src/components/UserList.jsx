@@ -13,12 +13,13 @@ const UserList = ({ users, selected, setSelected }) => {
         flexDirection: "column",
         gap: 2,
       }}
+      component="nav"
     >
       <img
         src="https://www.engagesolutionsgroup.com/employee/wp-content/uploads/sites/2/2023/10/engage-footer.svg"
         alt="Engage Colleague"
         height={40}
-        style={{ float: "left", marginRight: '20px'}}
+        style={{ float: "left", marginRight: "20px" }}
       />
       <List align="left" style={{ maxHeight: "100vh", overflowY: "auto" }}>
         {users.map((user) => (

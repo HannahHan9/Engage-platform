@@ -20,6 +20,7 @@ const UserDetails = ({ user, setUser }) => {
         columns={mobile ? 1 : 2}
         spacing={4}
         sx={{ m: 2, width: "auto" }}
+        component="main"
       >
         {mobile && (
           <Button
@@ -32,7 +33,7 @@ const UserDetails = ({ user, setUser }) => {
         )}
 
         {!user ? (
-          <Typography variant="body1" color={indigo[800]} padding={5}>
+          <Typography variant="h6" color={indigo[800]} padding={5}>
             Please select a user
           </Typography>
         ) : (
@@ -45,31 +46,40 @@ const UserDetails = ({ user, setUser }) => {
                   justifyContent: "center",
                   backgroundColor: "#FBBF09",
                 }}
+                component="section"
               >
                 <img src={user.image} width="100%" />
               </Paper>
             )}
-            <Paper sx={{ p: 2, backgroundColor: "#EB5A3B", color: "#fff" }}>
-              First Name: {user.first_name}
-              <br />
-              Last Name: {user.last_name}
-              <br />
-              <br /> <Divider /> <br /> Username: {user.username}
-              <br />
-              Date of Birth: {formatDate(user.date_of_birth)} <br /> <br />
-              <Divider />
-              <br />
-              Job Title: {user.job_title}
-              <br />
-              Department: {user.department}
+            <Paper
+              sx={{ p: 2, backgroundColor: "#EB5A3B", color: "#fff" }}
+              component="section"
+            >
+              <Typography>
+                First Name: {user.first_name}
+                <br />
+                Last Name: {user.last_name}
+                <br />
+                <br /> <Divider /> <br /> Username: {user.username}
+                <br />
+                Date of Birth: {formatDate(user.date_of_birth)} <br /> <br />
+                <Divider />
+                <br />
+                Job Title: {user.job_title}
+                <br />
+                Department: {user.department}
+              </Typography>
             </Paper>
             {user.bio && (
-              <Paper sx={{ p: 2, display: "flex" }}>
+              <Paper sx={{ p: 2, display: "flex" }} component="section">
                 <Typography>{user.bio}</Typography>
               </Paper>
             )}
 
-            <Paper sx={{ p: 2, backgroundColor: "#fd7e14" }}>
+            <Paper
+              sx={{ p: 2, backgroundColor: "#fd7e14" }}
+              component="section"
+            >
               <Typography variant="h6" component="h2">
                 Groups
               </Typography>
@@ -86,7 +96,10 @@ const UserDetails = ({ user, setUser }) => {
                 })}
               </List>
             </Paper>
-            <Paper sx={{ p: 2, backgroundColor: "#FBBF09" }}>
+            <Paper
+              sx={{ p: 2, backgroundColor: "#FBBF09" }}
+              component="section"
+            >
               <List>
                 {user.attributes.map((attribute) => {
                   return (
