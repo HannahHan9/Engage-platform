@@ -5,7 +5,7 @@ The site is responsive and makes use of Engage Integration API to display the us
 It also makes use of a back end proxy server to ensure the security of the api keys.\
 
 Things I would like to improve:
-- implement Routes
+- implement Routes to update the url appropriately when selecting users
 - implement tests (I only have experience writing back end tests)
 - use TanStack / React Query
 
