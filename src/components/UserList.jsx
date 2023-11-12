@@ -1,31 +1,26 @@
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Unstable_Grid2";
+import Box from "@mui/material/Box";
 
 const UserList = ({ users, selected, setSelected }) => {
   return (
-    <Grid
-      xs={12}
-      sm={4}
-      md={3}
-      container
-      sx={{ backgroundColor: "#143556", padding: 2 }}
+    <Box
+      sx={{
+        backgroundColor: "#143556",
+        padding: 2,
+        display: "flex",
+        flexDirection: "column",
+        gap: 2,
+      }}
     >
-      <Typography
-        variant="h6"
-        component="h2"
-        gutterBottom
-        align="center"
-        color="#fff"
-      >
-        <img
-          src="https://www.engagesolutionsgroup.com/employee/wp-content/uploads/sites/2/2023/10/engage-footer.svg"
-          alt="Engage Colleague"
-        />
-        All Users
-      </Typography>
-      <List align="left">
+      <img
+        src="https://www.engagesolutionsgroup.com/employee/wp-content/uploads/sites/2/2023/10/engage-footer.svg"
+        alt="Engage Colleague"
+        height={40}
+        style={{ float: "left", marginRight: '20px'}}
+      />
+      <List align="left" style={{ maxHeight: "100vh", overflowY: "auto" }}>
         {users.map((user) => (
           <ListItemButton
             key={user.id}
@@ -40,7 +35,7 @@ const UserList = ({ users, selected, setSelected }) => {
           </ListItemButton>
         ))}
       </List>
-    </Grid>
+    </Box>
   );
 };
 

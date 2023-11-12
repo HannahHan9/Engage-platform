@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import UserList from "./UserList";
 import UserDetails from "./UserDetails";
-import Grid from "@mui/material/Unstable_Grid2";
+import Box from "@mui/material/Box";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Typography from "@mui/material/Typography";
 
 const Dashboard = () => {
   const [users, setUsers] = useState([]);
@@ -53,14 +54,27 @@ const Dashboard = () => {
   }, [selected, users]);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return (
+      <Typography variant="h6" sx={{ textAlign: "center", marginTop: "40vh" }}>
+        Loading...
+      </Typography>
+    );
   }
 
   if (error) {
-    return <p>Error code: {error} Oops, something went wrong..</p>;
+    return (
+      <Typography variant="h6" sx={{ textAlign: "center", marginTop: "40vh" }}>
+        Error code: {error} Oops, something went wrong..
+      </Typography>
+    );
   }
   return (
-    <Grid container spacing={1}>
+    <Box
+      sx={{
+        display: "grid",
+        gridTemplateColumns: mobile ? "auto" : "auto 1fr",
+      }}
+    >
       {!mobile ? (
         <>
           <UserList
@@ -75,7 +89,7 @@ const Dashboard = () => {
       ) : (
         <UserDetails user={user} setUser={setUser} />
       )}
-    </Grid>
+    </Box>
   );
 };
 
