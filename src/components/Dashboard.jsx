@@ -19,7 +19,7 @@ const Dashboard = () => {
     const fetchUsers = async () => {
       const options = {
         method: "GET",
-        url: "https://engage-platform.onrender.com/",
+        url: "https://engage-proxy-server.onrender.com/users",
       };
       try {
         const response = await axios.request(options);
