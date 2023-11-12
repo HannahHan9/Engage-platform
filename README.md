@@ -1,6 +1,6 @@
 # Engage platform App
 
-A Single page application that fetches and displays the users details.\
+A single page application that fetches and displays the users details.\
 The site is responsive and makes use of Engage Integration API to display the user data.\
 It also makes use of a back end proxy server to ensure the security of the api keys.\
 A hosted version can be found [here](https://engage-platform.onrender.com/).  
