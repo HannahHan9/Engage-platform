@@ -1,4 +1,4 @@
-export const sortUsers = (prev, user) => {
+const sortUsers = (prev, user) => {
   if (prev.last_name > user.last_name) {
     return 1;
   }
@@ -13,3 +13,5 @@ export const sortUsers = (prev, user) => {
   }
   return 0;
 };
+
+export default sortUsers;
